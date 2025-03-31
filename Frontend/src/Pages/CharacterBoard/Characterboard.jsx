@@ -2,7 +2,7 @@ import React from 'react'
 
 function Characterboard() {
   return (
-    <div>Characterboard</div>
+    <div>Characterboard more text</div>
   )
 }
 
