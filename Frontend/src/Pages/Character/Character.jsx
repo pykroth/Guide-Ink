@@ -2,7 +2,7 @@ import React from 'react'
 
 function Character() {
   return (
-    <div>Character</div>
+    <div>Character Page</div>
   )
 }
 
