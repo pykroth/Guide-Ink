@@ -14,7 +14,7 @@ const SideBar = () => {
 
   return (
     <div className="flex h-screen">
-      {/* Side Menu */}
+      
       <div className="w-48 bg-gray-200 p-4">
         <h3 className="text-lg font-bold mb-4">Shapes</h3>
         {shapes.map((shape) => (
