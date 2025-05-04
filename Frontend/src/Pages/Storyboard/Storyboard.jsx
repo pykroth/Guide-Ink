@@ -6,7 +6,6 @@ export default function App() {
   const [isFullscreen, setIsFullscreen] = useState(false)
 
   const handleBackClick = () => {
-    // Logic for the back button (could be navigation or closing the box)
     console.log("Back button clicked");
   }
 
@@ -16,7 +15,6 @@ export default function App() {
 
   return (
     <div style={{ position: 'relative', height: '100vh', width: '100vw' }}>
-      {/* Back Button positioned outside the Tldraw box, hidden in fullscreen mode */}
       {!isFullscreen && (
         <button 
           onClick={handleBackClick}
@@ -30,14 +28,13 @@ export default function App() {
             border: 'none',
             borderRadius: '5px',
             cursor: 'pointer',
-            zIndex: 10, // Ensure the back button stays on top
+            zIndex: 10,
           }}
         >
           Back
         </button>
       )}
 
-      {/* Fullscreen Toggle Button with icon, positioned at bottom-right */}
       <button 
         onClick={toggleFullscreen}
         style={{
@@ -50,25 +47,24 @@ export default function App() {
           border: 'none',
           borderRadius: '50%',
           cursor: 'pointer',
-          zIndex: 10, // Ensure it's on top of the canvas
+          zIndex: 10, 
           fontSize: '18px',
         }}
       >
-        {isFullscreen ? '↗️' : '🔲'} {/* Fullscreen icon */}
+        {isFullscreen ? '↗️' : '🔲'} 
       </button>
 
-      {/* Tldraw Box with dynamic fullscreen */}
       <div style={{
-        position: isFullscreen ? 'fixed' : 'absolute', // Use fixed for fullscreen mode
-        top: isFullscreen ? '0' : '100px',  // Fullscreen will use the full height, otherwise space for buttons
-        left: isFullscreen ? '0' : '20px',  // Fullscreen will span the whole width, otherwise space for buttons
-        right: isFullscreen ? '0' : '20px', // Fullscreen spans the full width
-        bottom: isFullscreen ? '0' : '20px', // Fullscreen spans the full height
+        position: isFullscreen ? 'fixed' : 'absolute',
+        top: isFullscreen ? '0' : '100px',
+        left: isFullscreen ? '0' : '20px',
+        right: isFullscreen ? '0' : '20px',
+        bottom: isFullscreen ? '0' : '20px',
         background: '#fff',
         border: '1px solid #ddd',
-        borderRadius: isFullscreen ? '0' : '8px', // Remove border radius in fullscreen mode for a cleaner look
+        borderRadius: isFullscreen ? '0' : '8px',
         overflow: 'hidden',
-        zIndex: 1, // Keeps the box below the back button
+        zIndex: 1,
       }}>
         <Tldraw />
       </div>
