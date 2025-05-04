@@ -14,6 +14,7 @@ function Home() {
       <ProjectSlider />
 
       <div className="text-center text-sm mt-4">Task List</div>
+      
       <TaskCalendar />
       </div>
     </div>

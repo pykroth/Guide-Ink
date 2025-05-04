@@ -1,27 +1,27 @@
 import React, { useState } from 'react';
 
-const projects = [1, 2, 3, 4, 5, 6];  // Example project list
+const projects = [1, 2, 3, 4, 5, 6];  
 
 export default function ProjectSlider() {
   const [start, setStart] = useState(0);
-  const visibleCount = 4; // Number of visible projects at a time
-  const projectWidth = 30; // Width of each project card in rem (adjusted to make it larger)
+  const visibleCount = 4; 
+  const projectWidth = 30;
 
   const next = () => {
     if (start + visibleCount < projects.length) {
-      setStart(start + 1); // Move right
+      setStart(start + 1);
     }
   };
 
   const prev = () => {
     if (start > 0) {
-      setStart(start - 1); // Move left
+      setStart(start - 1); 
     }
   };
 
   return (
     <div className="flex items-center justify-center my-4 w-full max-w-4xl mx-auto">
-      {/* Left Arrow */}
+      
       <button
         onClick={prev}
         className="text-white text-3xl mr-2 hover:scale-110 transition-transform"
@@ -29,12 +29,12 @@ export default function ProjectSlider() {
         &lt;
       </button>
 
-      {/* Project Boxes with Slide Effect */}
+    
       <div className="overflow-hidden w-full">
         <div
           className="flex transition-transform duration-300 ease-in-out"
           style={{
-            transform: `translateX(-${start * projectWidth}rem)`, // Adjust based on projectWidth
+            transform: `translateX(-${start * projectWidth}rem)`,
           }}
         >
           {projects.slice(start, start + visibleCount).map((proj, idx) => (
@@ -48,7 +48,7 @@ export default function ProjectSlider() {
         </div>
       </div>
 
-      {/* Right Arrow */}
+      
       <button
         onClick={next}
         className="text-white text-3xl ml-2 hover:scale-110 transition-transform"
