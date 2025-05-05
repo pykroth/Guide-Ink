@@ -15,7 +15,7 @@ export default function App() {
   }
 
   return (
-    <div style={{ position: 'relative', height: '100vh', width: '100vw' }}>
+    <div style={{ position: 'relative', height: '100vh', width: '100vw', backgroundColor: '#1E1E1E'}}>
       {!isFullscreen && (
        <Navbar/>
       )}
