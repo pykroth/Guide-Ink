@@ -30,6 +30,9 @@ const Sidebar = () => {
             <div>
                 <button className="cursor-pointer" onClick={() => navigate('/storyboard')}>Story board</button>
             </div>
+            <div>
+                <button className="cursor-pointer" onClick={() => navigate('/character')}>Character board</button>
+            </div>
            
           </>
         )}
