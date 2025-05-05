@@ -6,7 +6,7 @@ import Sidebar from '../../Components/Sidebar'; // make sure casing matches the 
 
 function Home() {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-[#1E1E1E] text-white">
       <Navbar />
 
       {/* Main layout */}

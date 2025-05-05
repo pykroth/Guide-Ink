@@ -17,12 +17,12 @@ const tasks = [
 
 export default function TaskCalendar() {
   return (
-    <div className="bg-black w-[90%] rounded-xl mx-auto mt-6 p-4 text-black">
+    <div className="bg-black w-[90%] rounded-xl mx-auto mt-6 p-4 text-white">
       <h2 className="text-lg font-semibold mb-2">Tasks</h2>
       <ul className="space-y-2">
         {tasks.map((task, index) => (
-          <li key={index} className="bg-white p-2 rounded-md shadow">
-            <p className="font-medium">{task.title}</p>
+          <li key={index} className="bg-[#D9D9D9] p-2 rounded-md shadow">
+            <p className="font-medium text-black">{task.title}</p>
             <p className="text-sm text-gray-600">{task.date}</p>
           </li>
         ))}

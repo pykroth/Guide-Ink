@@ -4,7 +4,7 @@ const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
   const navigate = useNavigate();
   return (
-    <div className={`${isOpen ? 'w-64' : 'w-16'} h-screen bg-black text-white transition-all duration-300`}>
+    <div className={`${isOpen ? 'w-64' : 'w-16'} h-screen bg-[#202020] text-white transition-all duration-300`}>
       
       <div className="flex items-center justify-between px-2 py-3 border-b border-gray-700">
         {isOpen && <span className="text-sm font-semibold px-2">Project Name</span>}
@@ -14,7 +14,7 @@ const Sidebar = () => {
       </div>
 
      
-      <nav className="px-3 py-2 text-sm space-y-2">
+      <nav className="px-3 py-2 text-sm space-y-2 bg-[202020]">
         {isOpen && (
           <>
             <div>
