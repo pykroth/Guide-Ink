@@ -1,7 +1,8 @@
 import { Tldraw } from 'tldraw'
 import 'tldraw/tldraw.css'
 import { useState } from 'react'
-
+import Sidebar from '../../Components/Sidebar'
+import Navbar from '../../Components/Navbar'
 export default function App() {
   const [isFullscreen, setIsFullscreen] = useState(false)
 
@@ -16,23 +17,7 @@ export default function App() {
   return (
     <div style={{ position: 'relative', height: '100vh', width: '100vw' }}>
       {!isFullscreen && (
-        <button 
-          onClick={handleBackClick}
-          style={{
-            position: 'absolute',
-            top: '20px',
-            left: '20px',
-            padding: '10px 20px',
-            backgroundColor: '#007bff',
-            color: 'white',
-            border: 'none',
-            borderRadius: '5px',
-            cursor: 'pointer',
-            zIndex: 10,
-          }}
-        >
-          Back
-        </button>
+       <Navbar/>
       )}
 
       <button 
