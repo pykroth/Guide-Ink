@@ -57,7 +57,7 @@ function Login() {
     <div style={{ backgroundColor: '#3b3b3b'}} className="flex min-h-screen items-center justify-center p-4" >
       <div className="flex w-full max-w-md flex-col items-center bg-white bg-opacity-90 shadow-md rounded-lg p-8 space-y-8">
         <div className="flex flex-col items-center">
-          <p className="text-gray-700 font-bold text-4xl">Lumina Archives</p>
+          <p className="text-gray-700 font-bold text-4xl">Guide Ink</p>
         </div>
         <h2 className="text-3xl font-bold text-gray-800 text-center">Log In</h2>
         <p className="text-md text-gray-600 text-center mt-2">
