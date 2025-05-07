@@ -2,12 +2,25 @@ import { useState, useEffect } from 'react';
 
 import Navbar from '../../Components/Navbar';
 import Sidebar from '../../Components/Sidebar'; // make sure casing matches the filename
+import axios from 'axios';
 
 
 export default function Artboard() {
   const [boards, setBoards] = useState([]);
   const [showForm, setShowForm] = useState(false);
   const [inputUrl, setInputUrl] = useState('');
+  
+  useEffect(() => {
+    axios.get('http://localhost:3000/projects/urls/')
+      .then(res => {
+        setBoards(res.data || []);
+        console.log(res)
+      })
+      .catch(err => {
+        console.error('Error fetching boards: ', err);
+      })
+  }, []);
+
 
 
   const handleAddBoard = (e) => {
@@ -23,6 +36,15 @@ export default function Artboard() {
 
     setBoards(prev => [...prev, inputUrl]);
     console.log(boards)
+
+    axios.post('http://localhost:3000/projects/urls/', {url: inputUrl})
+      .then(res => {
+        console.log('Boards updated: ', res.data);
+      })
+      .catch(err => {
+        console.error('Error posting boards: ', err);
+      })
+
     setInputUrl('');
     setShowForm(false);
   };

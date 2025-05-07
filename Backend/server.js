@@ -5,6 +5,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 
+const cors = require('cors');
+app.use(express.json());
+app.use(cors())
+
 main().catch(err => console.log(err));
 
 async function main() {
@@ -12,7 +16,6 @@ async function main() {
   console.log('Connected to MongoDB');
 }
 
-app.use(express.json());
 
 const artBoardRoutes = require('./routes/artBoard.routes.js');
 
