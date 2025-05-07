@@ -1,21 +1,23 @@
 // index.js
+require('dotenv').config();
+
 const express = require('express');
 const mongoose = require('mongoose');
-const cors = require('cors');
 const app = express();
 
-const userRoutes = require('./routes/userRoutes');
-const projectRoutes = require('./routes/projectRoutes');
+main().catch(err => console.log(err));
 
-mongoose.connect('mongodb://localhost:27017/creative_project_app');
+async function main() {
+  await mongoose.connect(process.env.MONGODB_URI);
+  console.log('Connected to MongoDB');
+}
 
-app.use(cors());
 app.use(express.json());
 
-app.use('/api/users', userRoutes);
-app.use('/api/projects', projectRoutes);
+const artBoardRoutes = require('./routes/artBoard.routes.js');
 
-app.listen(3000, () => {
-    console.log('Server running at 3000');
-    connectMongoDB();
+app.use('/projects', artBoardRoutes);
+
+app.listen(process.env.PORT, () => {
+    console.log('Server running at ' + process.env.PORT);
 });
